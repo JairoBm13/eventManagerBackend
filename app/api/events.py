@@ -37,7 +37,7 @@ def create(userid):
 @cross_origin(supports_credentials=True)
 def read(userid):
    user = User.query.get(userid)
-   events = Event.query.join(User).filter(User.id == userid)
+   events = Event.query.join(User).filter(User.id == userid).order_by(model.Event.created.desc())
    events = list(map(lambda event: event.serialize(), events))
    return jsonify(events)
 

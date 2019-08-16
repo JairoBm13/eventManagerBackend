@@ -72,6 +72,7 @@ class Event(db.Model):
     start_date = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     end_date = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     method = db.Column(db.Boolean, default=False)
+    created = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
     def __str__(self):
         return self.name
