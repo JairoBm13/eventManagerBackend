@@ -7,9 +7,7 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 RUN pip install gunicorn
 
-COPY models models
-COPY resources resources
-COPY test test
-COPY app.py
+COPY app app
+COPY event.py event.py
 
-ENTRYPOINT ["gunicorn", "-b", ":5000", "--access-logfile", "-", "--error-logfile", "-", "app:app"]
+ENTRYPOINT ["gunicorn", "-b", ":5000", "--access-logfile", "-", "--error-logfile", "-", "event:app"]
