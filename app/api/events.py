@@ -55,7 +55,7 @@ def get_detail(userid, eventid):
 @cross_origin(supports_credentials=True)
 def delete(userid, uid_to_delete):
    user = User.query.get(userid)
-   event = Event.query.join(User).filter(and_(User.id == userid, Event.id == data.get('id'))).first()
+   event = Event.query.join(User).filter(and_(User.id == userid, Event.id == uid_to_delete)).first()
    db.session.delete(event)
    db.session.commit()
    return jsonify(event.serialize())
