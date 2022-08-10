@@ -71,7 +71,7 @@ matplotlib==3.0.2
 mccabe==0.6.1
 mistune==0.8.4
 msgpack==0.6.1
-nbconvert==5.4.0
+nbconvert==6.3.0
 nbformat==4.4.0
 neo4j-driver==1.6.3
 neomodel==3.3.1
